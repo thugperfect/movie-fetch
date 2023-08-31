@@ -15,7 +15,8 @@
 
 ::-webkit-scrollbar-thumb {
   background-color: #d6d9de99;
-  border-radius: 8px; /* Color of the scrollbar thumb */
+  border-radius: 8px; 
+ 
 }
 
 ::-webkit-scrollbar-track {
@@ -25,3 +26,7 @@
 .transparent-scroll::-webkit-scrollbar-track {
   background-color: #18181b00;
 }
+.transparent-scroll::-webkit-scrollbar-thumb {
+  background-color: #18181b3b;
+}
+
