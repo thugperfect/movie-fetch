@@ -11,7 +11,7 @@ const Body = () => {
   const title = "a";
   const year = 2023
   const api_key = `http://www.omdbapi.com/?s=${search}&y=${year}&apikey=68ec0e63`
-  const latest_api_key = `http://www.omdbapi.com/?s=action&y=2023&apikey=68ec0e63`
+  const latest_api_key = `http://www.omdbapi.com/?s=act&y=2022&apikey=68ec0e63`
   const action_api_key = `http://www.omdbapi.com/?s=action&apikey=68ec0e63`
   const romance_api_key = `http://www.omdbapi.com/?s=romance&apikey=68ec0e63`
   const comedy_api_key = `http://www.omdbapi.com/?s=comedy&apikey=68ec0e63`
@@ -43,31 +43,7 @@ const Body = () => {
 
   return (
     <div className=" container bg-gray-500 bg-opacity-30  h-auto mx-auto w-[80%]">
-      <div className="text-2xl pt-5 cursor-pointer font-bold text-white px-5">Latest Movies</div>
-      <div className="flex  overflow-x-scroll  transparent-scroll">
-        
-
-          {
-            latest?.length>0?
-            <div className="flex ">
-          {latest.map((key)=>(
-              <MovieBox movieName={key}/>
-            ))} </div>
-            :<div className="flex ">
-              <MovieBox/>
-              <MovieBox/>
-              <MovieBox/>
-              <MovieBox/>
-              <MovieBox/>
-              <MovieBox/>
-              <MovieBox/>
-           
-           
-            </div>
-          }
-
-       
-      </div>
+      
       <div className="text-2xl pt-5 cursor-pointer font-bold text-white px-5">Action</div>
       <div className="flex  overflow-x-scroll transparent-scroll">
       {
@@ -156,6 +132,31 @@ const Body = () => {
           }
 
         </div>
+        <div className="text-2xl pt-5 cursor-pointer font-bold text-white px-5">Latest Movies</div>
+      <div className="flex  overflow-x-scroll  transparent-scroll">
+        
+
+          {
+            latest?.length>0?
+            <div className="flex ">
+          {latest.map((key)=>(
+              <MovieBox movieName={key}/>
+            ))} </div>
+            :<div className="flex ">
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+           
+           
+            </div>
+          }
+
+       
+      </div>
       </div>
 
   );
