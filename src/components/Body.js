@@ -57,6 +57,11 @@ const Body = () => {
               <MovieBox/>
               <MovieBox/>
               <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+           
            
             </div>
           }
@@ -65,83 +70,91 @@ const Body = () => {
       </div>
       <div className="text-2xl pt-5 cursor-pointer font-bold text-white px-5">Action</div>
       <div className="flex  overflow-x-scroll transparent-scroll">
-        <div className="flex gap-3">
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-        </div>
+      {
+            action?.length>0?
+            <div className="flex ">
+          {action.map((key)=>(
+              <MovieBox movieName={key}/>
+            ))} </div>
+            :<div className="flex ">
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+           
+           
+            </div>
+          }
+
       </div>
       <div className="text-2xl pt-5 cursor-pointer font-bold text-white px-5">Romance</div>
       <div className="flex  overflow-x-scroll transparent-scroll">
-        <div className="flex ">
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
+      {
+            romance?.length>0?
+            <div className="flex ">
+          {romance.map((key)=>(
+              <MovieBox movieName={key}/>
+            ))} </div>
+            :<div className="flex ">
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+           
+           
+            </div>
+          }
 
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-        </div>
       </div>
       <div className="text-2xl pt-5 cursor-pointer font-bold text-white px-5">Comedy</div>
       <div className="flex  overflow-x-scroll transparent-scroll">
-        <div className="flex ">
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
+      {
+            comedy?.length>0?
+            <div className="flex ">
+          {comedy.map((key)=>(
+              <MovieBox movieName={key}/>
+            ))} </div>
+            :<div className="flex ">
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+           
+           
+            </div>
+          }
 
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-        </div>
         </div>
         <div className="text-2xl pt-5 cursor-pointer font-bold text-white px-5">Horror</div>
         <div className="flex  overflow-x-scroll transparent-scroll">
-          <div className="flex ">
-            <MovieBox />
-            <MovieBox />
-            <MovieBox />
-            <MovieBox />
-            <MovieBox />
-            <MovieBox />
-            <MovieBox />
-            <MovieBox />
-            <MovieBox />
-            <MovieBox />
-            <MovieBox />
-            <MovieBox />
-            <MovieBox />
-            <MovieBox />
-          </div>
+        {
+            horror?.length>0?
+            <div className="flex ">
+          {horror.map((key)=>(
+              <MovieBox movieName={key}/>
+            ))} </div>
+            :<div className="flex ">
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+           
+           
+            </div>
+          }
+
         </div>
       </div>
 
