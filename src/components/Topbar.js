@@ -1,7 +1,7 @@
 const Topbar = () =>{
 
     return(
-       <div>
+       <div className="w-full">
          <div className="h-[80px] bg-zinc-900 w-full flex items-center px-5 justify-between">
             <div className="w-[60px] h-[60px] bg-red-50 rounded-full"></div>
             <div className="text-[35px] text-green-400">Movie Fetch</div>

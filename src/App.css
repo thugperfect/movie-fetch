@@ -9,8 +9,8 @@
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 100px;
+  width: 8px;
+  height: 8px;
   
 }
 
@@ -21,7 +21,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #cbd5e053;
+  background-color: #18181b;
  
  /* Color of the scrollbar track */
 }
