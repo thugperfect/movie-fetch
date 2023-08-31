@@ -7,3 +7,21 @@
     @apply text-black;
   }
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 100px;
+  
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #d6d9de99;
+  border-radius: 8px; /* Color of the scrollbar thumb */
+  
+}
+
+::-webkit-scrollbar-track {
+  background-color: #cbd5e053;
+ 
+ /* Color of the scrollbar track */
+}
