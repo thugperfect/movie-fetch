@@ -18,7 +18,7 @@ const Body = () => {
           <MovieBox />
         </div>
       </div>
-      <div className="text-xl font-bold text-white px-5">Action</div>
+      <div className="text-2xl font-bold text-white px-5">Action</div>
       <div className="flex  overflow-x-scroll transparent-scroll">
         <div className="flex gap-3">
           <MovieBox />
@@ -36,7 +36,7 @@ const Body = () => {
           <MovieBox />
         </div>
       </div>
-      <div className="text-xl font-bold text-white px-5">Romance</div>
+      <div className="text-2xl font-bold text-white px-5">Romance</div>
       <div className="flex  overflow-x-scroll transparent-scroll">
         <div className="flex ">
           <MovieBox />
@@ -56,7 +56,7 @@ const Body = () => {
           <MovieBox />
         </div>
       </div>
-      <div className="text-xl font-bold text-white px-5">Comedy</div>
+      <div className="text-2xl font-bold text-white px-5">Comedy</div>
       <div className="flex  overflow-x-scroll transparent-scroll">
         <div className="flex ">
           <MovieBox />
@@ -78,7 +78,7 @@ const Body = () => {
           <MovieBox />
           <MovieBox />
         </div>
-        <div className="text-xl font-bold text-white px-5">Horror</div>
+        <div className="text-2xl font-bold text-white px-5">Horror</div>
         <div className="flex  overflow-x-scroll transparent-scroll">
           <div className="flex ">
             <MovieBox />
