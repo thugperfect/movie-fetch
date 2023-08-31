@@ -1,5 +1,17 @@
 import MovieBox from "./MovieBox";
+import {useState,useEffect} from 'react'
 const Body = () => {
+  const api_key = 'http://www.omdbapi.com/?i=tt3896198&apikey=68ec0e63'
+
+
+  useEffect(()=>{
+    const fetchMovie =async () =>{
+      const movies =await fetch(api_key)
+      const cont = await movies.json()
+      console.log(cont);
+    }
+    fetchMovie()
+  },[])
   return (
     <div className=" container bg-gray-500 bg-opacity-30  h-auto mx-auto w-[80%]">
       <div className="text-2xl pt-5 cursor-pointer font-bold text-white px-5">Latest Movies</div>
