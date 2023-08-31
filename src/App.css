@@ -30,3 +30,9 @@
   background-color: #18181b3b;
 }
 
+@media(max-width:600px){
+  .resp{
+    width: 100px;
+    height: 160px;
+  }
+}

@@ -11,7 +11,6 @@ const Topbar = () =>{
             <div className="flex gap-2">
                 <input className=" px-2 outline-0 rounded-[5px]  lg:w-[300px] w-[120px]  " type="text" placeholder="Search for Movies" ></input>
                 <div className="text-gray-500 hover:text-gray-600 cursor-pointer">Home</div>
-                <div className="text-gray-500 hover:text-gray-600 cursor-pointer">About</div>
                 <div className="text-gray-500 hover:text-gray-600 cursor-pointer">Login</div>
             </div>
         </div>
