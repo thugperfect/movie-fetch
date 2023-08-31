@@ -1,7 +1,7 @@
 const Topbar = () =>{
 
     return(
-       <div className="w-full sticky top-0git">
+       <div className="w-full sticky top-0">
          <div className="h-[80px] bg-zinc-900 w-full flex items-center px-5 justify-between">
             <div className="flex">
             <div className="w-[60px] h-[60px] bg-red-50 rounded-full"></div>

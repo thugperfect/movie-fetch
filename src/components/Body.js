@@ -2,7 +2,7 @@ import MovieBox from "./MovieBox";
 const Body = () => {
   return (
     <div className=" container bg-gray-500 bg-opacity-30  h-auto mx-auto w-[80%]">
-      <div className="text-2xl font-bold text-white px-5">Latest Movies</div>
+      <div className="text-2xl pt-5 cursor-pointer font-bold text-white px-5">Latest Movies</div>
       <div className="flex  overflow-x-scroll  transparent-scroll">
         <div className="flex ">
           <MovieBox />
@@ -18,7 +18,7 @@ const Body = () => {
           <MovieBox />
         </div>
       </div>
-      <div className="text-2xl font-bold text-white px-5">Action</div>
+      <div className="text-2xl pt-5 cursor-pointer font-bold text-white px-5">Action</div>
       <div className="flex  overflow-x-scroll transparent-scroll">
         <div className="flex gap-3">
           <MovieBox />
@@ -36,7 +36,7 @@ const Body = () => {
           <MovieBox />
         </div>
       </div>
-      <div className="text-2xl font-bold text-white px-5">Romance</div>
+      <div className="text-2xl pt-5 cursor-pointer font-bold text-white px-5">Romance</div>
       <div className="flex  overflow-x-scroll transparent-scroll">
         <div className="flex ">
           <MovieBox />
@@ -56,7 +56,7 @@ const Body = () => {
           <MovieBox />
         </div>
       </div>
-      <div className="text-2xl font-bold text-white px-5">Comedy</div>
+      <div className="text-2xl pt-5 cursor-pointer font-bold text-white px-5">Comedy</div>
       <div className="flex  overflow-x-scroll transparent-scroll">
         <div className="flex ">
           <MovieBox />
@@ -78,7 +78,8 @@ const Body = () => {
           <MovieBox />
           <MovieBox />
         </div>
-        <div className="text-2xl font-bold text-white px-5">Horror</div>
+        </div>
+        <div className="text-2xl pt-5 cursor-pointer font-bold text-white px-5">Horror</div>
         <div className="flex  overflow-x-scroll transparent-scroll">
           <div className="flex ">
             <MovieBox />
@@ -98,7 +99,7 @@ const Body = () => {
           </div>
         </div>
       </div>
-    </div>
+   
   );
 };
 export default Body;
