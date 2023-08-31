@@ -48,19 +48,16 @@ const Body = () => {
         
 
           {
-            latest.length>0?
+            latest?.length>0?
             <div className="flex ">
-            </div>:<div className="flex ">
+          {latest.map((key)=>(
+              <MovieBox movieName={key}/>
+            ))} </div>
+            :<div className="flex ">
               <MovieBox/>
               <MovieBox/>
               <MovieBox/>
-              <MovieBox/>
-              <MovieBox/>
-              <MovieBox/>
-              <MovieBox/>
-              <MovieBox/>
-              <MovieBox/>
-              <MovieBox/>
+           
             </div>
           }
 
