@@ -23,7 +23,10 @@ setMovie(fromBody)
                   
                   movie?.length>0?
                             movie.map((prop)=>(
-                                <div className=" w-full h-[50px] bg-zinc-800 px-5 flex flex-col justify-center">{prop.Title}</div>
+                                <div className=" w-full h-[60px] bg-zinc-800 px-5  flex items-center gap-2">
+                                    <img className="h-[40px] w-[40px] rounded-full" src={prop.Poster} alt="none" />
+                                    <div>{prop.Title}</div>
+                                </div>
                             )):
                         ""                         
                             
