@@ -20,38 +20,40 @@ const Body = () => {
   const year = 2023
   const api_key = `http://www.omdbapi.com/?s=${search}&y=${year}&apikey=68ec0e63`
 
-
-
-
-  useEffect(()=>{      
   const latest_api_key = `https://www.omdbapi.com/?s=act&y=2022-2023&page=${lpage}&apikey=68ec0e63`
   const action_api_key = `https://www.omdbapi.com/?s=action&page=${apage}&apikey=68ec0e63`
   const romance_api_key =`https://www.omdbapi.com/?s=love&page=${rpage}&apikey=68ec0e63`
   const comedy_api_key =`https://www.omdbapi.com/?s=comedy&page=${cpage}&apikey=68ec0e63`
   const horror_api_key =`https://www.omdbapi.com/?s=horror&page=${hpage}&apikey=68ec0e63`
 
-    const fetchMovie =async () =>{
+  const fetchMovie =async () =>{
+    const latest_movies =await fetch(latest_api_key)
+    const action_movies =await fetch(action_api_key)
+    const romance_movies =await fetch(romance_api_key)
+    const comedy_movies =await fetch(comedy_api_key)
+    const horror_movies =await fetch(horror_api_key)
+    const latest_cont = await latest_movies.json()
+    const action_cont = await action_movies.json()
+    const romance_cont = await romance_movies.json()
+    const comedy_cont = await comedy_movies.json()
+    const horror_cont = await horror_movies.json()
+   setLatest(latest_cont.Search)
+   setAction(action_cont.Search)
+   setRomance(romance_cont.Search)
+   setComedy(comedy_cont.Search)
+   setHorror(horror_cont.Search)
 
-      const latest_movies =await fetch(latest_api_key)
-      const action_movies =await fetch(action_api_key)
-      const romance_movies =await fetch(romance_api_key)
-      const comedy_movies =await fetch(comedy_api_key)
-      const horror_movies =await fetch(horror_api_key)
-      const latest_cont = await latest_movies.json()
-      const action_cont = await action_movies.json()
-      const romance_cont = await romance_movies.json()
-      const comedy_cont = await comedy_movies.json()
-      const horror_cont = await horror_movies.json()
-     setLatest(latest_cont.Search)
-     setAction(action_cont.Search)
-     setRomance(romance_cont.Search)
-     setComedy(comedy_cont.Search)
-     setHorror(horror_cont.Search)
-    }
+  }
+
+
+
+  useEffect(()=>{      
+
     fetchMovie()
-  },[])
+  },[latest_api_key,action_api_key,romance_api_key,comedy_api_key,horror_api_key])
   const setPage =(prop) =>{
     console.log("clicked");
+    
     if(prop === lpage){
       setLatest()
       setLpage(lpage+1)
