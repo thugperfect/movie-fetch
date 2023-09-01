@@ -43,6 +43,31 @@ const Body = () => {
 
   return (
     <div className=" container bg-gray-500 bg-opacity-30  h-auto mx-auto w-[80%]">
+       <div className="text-2xl pt-5 cursor-pointer font-bold text-white px-5">Latest Movies</div>
+      <div className="flex  overflow-x-scroll  transparent-scroll">
+        
+
+          {
+            latest?.length>0?
+            <div className="flex ">
+          {latest.map((key)=>(
+              <MovieBox movieName={key}/>
+            ))} </div>
+            :<div className="flex ">
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+              <MovieBox/>
+           
+           
+            </div>
+          }
+
+       
+      </div>
       
       <div className="text-2xl pt-5 cursor-pointer font-bold text-white px-5">Action</div>
       <div className="flex  overflow-x-scroll transparent-scroll">
@@ -132,31 +157,7 @@ const Body = () => {
           }
 
         </div>
-        <div className="text-2xl pt-5 cursor-pointer font-bold text-white px-5">Latest Movies</div>
-      <div className="flex  overflow-x-scroll  transparent-scroll">
-        
-
-          {
-            latest?.length>0?
-            <div className="flex ">
-          {latest.map((key)=>(
-              <MovieBox movieName={key}/>
-            ))} </div>
-            :<div className="flex ">
-              <MovieBox/>
-              <MovieBox/>
-              <MovieBox/>
-              <MovieBox/>
-              <MovieBox/>
-              <MovieBox/>
-              <MovieBox/>
-           
-           
-            </div>
-          }
-
        
-      </div>
       </div>
 
   );
