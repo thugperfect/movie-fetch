@@ -11,7 +11,7 @@ const Body = () => {
   const title = "a";
   const year = 2023
   const api_key = `http://www.omdbapi.com/?s=${search}&y=${year}&apikey=68ec0e63`
-  const latest_api_key = `http://www.omdbapi.com/?s=act&y=2022&apikey=68ec0e63`
+  const latest_api_key = `http://www.omdbapi.com/?s=act&y=2023&apikey=68ec0e63`
   const action_api_key = `http://www.omdbapi.com/?s=action&apikey=68ec0e63`
   const romance_api_key = `http://www.omdbapi.com/?s=romance&apikey=68ec0e63`
   const comedy_api_key = `http://www.omdbapi.com/?s=comedy&apikey=68ec0e63`
