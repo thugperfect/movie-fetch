@@ -3,7 +3,7 @@ import './App.css';
 import Topbar from './components/Topbar';
 import Body from './components/Body';
 import Footer from './components/Footer';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 
 
 function App() {
@@ -13,12 +13,14 @@ function App() {
     setSearch(prop.replaceAll(" ","%20"))
   }
   const getResult = (prop) =>{
-    
+    if(prop)
+    setResult(prop)
   }
+
   return (
     <div className="h-[100vh] bg-gradient-to-r from-red-500  to-slate-600 overflow-y-scroll">
-      <Topbar search={getSearch}/>
-      <Body fromSearch={search} result={getResult}/>
+      <Topbar search={getSearch} fromBody={result}/>
+      <Body fromSearch={search} bodyResult={getResult}/>
       <Footer/>
     </div>
   );

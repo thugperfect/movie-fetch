@@ -1,6 +1,10 @@
 import MovieBox from "./MovieBox";
 import {useState,useEffect} from 'react'
-const Body = ({fromSearch}) => {
+const Body = ({fromSearch,bodyResult}) => {
+  const resTopbar = () =>{
+    bodyResult(result)
+  }
+
   const [result,setResult] = useState()
 
   const [latest,setLatest] = useState()
@@ -49,12 +53,14 @@ const Body = ({fromSearch}) => {
   const searchMovie= async()=>{
     const searchResult = await fetch(search_api_key)
     const res = await searchResult.json()
-   
+   if(res.Search)
+   setResult(res.Search)
 
   }
   useEffect(()=>{      
     fetchMovie()
     searchMovie()
+    resTopbar()
   },[latest_api_key,action_api_key,romance_api_key,comedy_api_key,horror_api_key,fromSearch])
   const setPage =(prop) =>{
     console.log("clicked");
