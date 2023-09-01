@@ -23,7 +23,7 @@ const Body = ({fromSearch,bodyResult}) => {
   const search="action";
   const title = "a";
   const year = 2023
-  const search_api_key = `http://www.omdbapi.com/?s=${fromSearch}&apikey=68ec0e63`
+  const search_api_key = `https://www.omdbapi.com/?s=${fromSearch}&apikey=68ec0e63`
 
   const latest_api_key = `https://www.omdbapi.com/?s=act&y=2022-2023&page=${lpage}&apikey=68ec0e63`
   const action_api_key = `https://www.omdbapi.com/?s=action&page=${apage}&apikey=68ec0e63`
