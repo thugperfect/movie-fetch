@@ -17,13 +17,13 @@ setMovie(fromBody)
             <div className="flex gap-2">
                 <div className="relative">
                 <input className=" px-2 outline-0 rounded-[5px]  lg:w-[350px] w-[140px]" onChange={(e)=>search(e.target.value)} type="text" placeholder="Search for Movies" ></input>
-                <div className="absolute lg:w-[350px] w-[140px] text-white flex flex-col">
+                <div className="absolute lg:w-[350px] w-[140px] text-white flex flex-col cursor-pointer">
 
                     {  
                   
-                  movie?.length ?
+                  movie?.length>0?
                             movie.map((prop)=>(
-                                <div className=" w-full h-[50px] bg-zinc-800 px-5 flex flex-col justify-center">{movie.Title}</div>
+                                <div className=" w-full h-[50px] bg-zinc-800 px-5 flex flex-col justify-center">{prop.Title}</div>
                             )):
                         ""                         
                             
