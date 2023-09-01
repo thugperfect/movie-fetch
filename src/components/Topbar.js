@@ -8,7 +8,7 @@ const [searchres,setSearch] = useState("")
     useEffect(()=>{
         setMovie(fromBody)
     },[fromBody])
-      console.log(searchres);
+    
     return(
        <div className="w-full sticky top-0 z-10">
          <div className="h-[80px] bg-zinc-900 w-full flex items-center px-3 justify-between">
