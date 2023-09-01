@@ -48,7 +48,6 @@ const Body = () => {
 
 
   useEffect(()=>{      
-
     fetchMovie()
   },[latest_api_key,action_api_key,romance_api_key,comedy_api_key,horror_api_key])
   const setPage =(prop) =>{
