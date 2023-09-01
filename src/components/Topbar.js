@@ -19,16 +19,20 @@ const [searchres,setSearch] = useState("")
    
             <div className="flex gap-2">
                 <div className="relative">
-                <input className=" px-2 outline-0 rounded-[5px]  lg:w-[350px] w-[140px]" onChange={(e)=>{search(e.target.value);setSearch(e.target.value)}} type="text" placeholder="Search for Movies" ></input>
-                <div className="absolute lg:w-[350px] w-[140px] text-white flex flex-col cursor-pointer">
+                <input className=" px-2 outline-0 rounded-[5px]  md:w-[350px] w-[140px]" onChange={(e)=>{search(e.target.value);setSearch(e.target.value)}} type="text" placeholder="Search for Movies" ></input>
+                <div className="absolute md:w-[350px] w-[140px] text-white flex flex-col cursor-pointer">
 
                     {  
                   (searchres)?
                   movie?.length>0?
                             movie.map((prop)=>(
-                                <div className=" w-full h-[60px] bg-zinc-800 px-5  flex items-center gap-2">
-                                    <img className="h-[40px] w-[40px] rounded-full" src={prop.Poster} alt="none" />
-                                    <div>{prop.Title}</div>
+                                <div className=" w-full h-[70px] bg-zinc-800 px-5  flex items-center gap-2">
+                                    <img className="h-[40px] w-[40px] rounded-full hidden md:block" src={prop.Poster} alt="none" />
+                                    <div>
+                                        <div>{prop.Title}</div>
+                                        <div className="text-[10px]">{prop.Year}</div>
+                                        
+                                        </div>
                                 </div>
                             )):
                         "" :""                        
