@@ -2,10 +2,13 @@ import { useState,useEffect } from "react"
 const Topbar = ({search,fromBody}) =>{
 const [movie,setMovie] = useState()
 
+const [searchres,setSearch] = useState("")
+
+
     useEffect(()=>{
-setMovie(fromBody)
+        setMovie(fromBody)
     },[fromBody])
-      
+      console.log(searchres);
     return(
        <div className="w-full sticky top-0 z-10">
          <div className="h-[80px] bg-zinc-900 w-full flex items-center px-3 justify-between">
@@ -16,11 +19,11 @@ setMovie(fromBody)
    
             <div className="flex gap-2">
                 <div className="relative">
-                <input className=" px-2 outline-0 rounded-[5px]  lg:w-[350px] w-[140px]" onChange={(e)=>search(e.target.value)} type="text" placeholder="Search for Movies" ></input>
+                <input className=" px-2 outline-0 rounded-[5px]  lg:w-[350px] w-[140px]" onChange={(e)=>{search(e.target.value);setSearch(e.target.value)}} type="text" placeholder="Search for Movies" ></input>
                 <div className="absolute lg:w-[350px] w-[140px] text-white flex flex-col cursor-pointer">
 
                     {  
-                  
+                  (searchres)?
                   movie?.length>0?
                             movie.map((prop)=>(
                                 <div className=" w-full h-[60px] bg-zinc-800 px-5  flex items-center gap-2">
@@ -28,7 +31,7 @@ setMovie(fromBody)
                                     <div>{prop.Title}</div>
                                 </div>
                             )):
-                        ""                         
+                        "" :""                        
                             
                      }
            
