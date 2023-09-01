@@ -30,9 +30,24 @@
   background-color: #18181b3b;
 }
 
+.none{
+  transition: load 2s ease;
+}
 @media(max-width:600px){
   .resp{
     width: 100px;
     height: 160px;
+  }
+}
+@keyframes load{
+  0%{
+    background-color: black;
+
+  }
+  50%{
+    background-color: rgb(72, 71, 71);
+  }
+  100%{
+    background-color: black;
   }
 }

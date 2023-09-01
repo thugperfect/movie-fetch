@@ -23,14 +23,15 @@ const Body = () => {
 
 
 
-  useEffect(()=>{
+  useEffect(()=>{      
+  const latest_api_key = `https://www.omdbapi.com/?s=act&y=2022-2023&page=${lpage}&apikey=68ec0e63`
+  const action_api_key = `https://www.omdbapi.com/?s=action&page=${apage}&apikey=68ec0e63`
+  const romance_api_key =`https://www.omdbapi.com/?s=love&page=${rpage}&apikey=68ec0e63`
+  const comedy_api_key =`https://www.omdbapi.com/?s=comedy&page=${cpage}&apikey=68ec0e63`
+  const horror_api_key =`https://www.omdbapi.com/?s=horror&page=${hpage}&apikey=68ec0e63`
 
     const fetchMovie =async () =>{
-      const latest_api_key = await `https://www.omdbapi.com/?s=act&y=2022-2023&page=${lpage}&apikey=68ec0e63`
-      const action_api_key = await `https://www.omdbapi.com/?s=action&page=${apage}&apikey=68ec0e63`
-      const romance_api_key =await `https://www.omdbapi.com/?s=love&page=${rpage}&apikey=68ec0e63`
-      const comedy_api_key =await `https://www.omdbapi.com/?s=comedy&page=${cpage}&apikey=68ec0e63`
-      const horror_api_key =await `https://www.omdbapi.com/?s=horror&page=${hpage}&apikey=68ec0e63`
+
       const latest_movies =await fetch(latest_api_key)
       const action_movies =await fetch(action_api_key)
       const romance_movies =await fetch(romance_api_key)
@@ -55,17 +56,21 @@ const Body = () => {
       setLatest()
       setLpage(lpage+1)
     }
-    if(prop === apage){
-      
+    else if(prop === apage){
+      setAction()
+      setApage(apage+1)
     }
-    if(prop === rpage){
-      
+    else if(prop === rpage){
+      setRomance()
+      setRpage(rpage+1)
     }
-    if(prop === cpage){
-      
+    else if(prop === cpage){
+      setComedy()
+      setCpage(cpage+1)
     }
-    if(prop === hpage){
-      
+   else if(prop === hpage){
+      setHorror()
+      setHpage(hpage+1)
     }
 
 
@@ -82,7 +87,12 @@ const Body = () => {
           {latest.map((key)=>(
               <MovieBox movieName={key}/>
             ))} 
-           <div onClick={()=>setPage(lpage)}><MovieBox text={"Load More"}/></div></div>
+            {(lpage<5)?
+           <div onClick={()=>setPage(lpage)}><MovieBox text={"Load More"}/></div>
+           :
+           ""
+           
+            }</div>
             :<div className="flex ">
               <MovieBox/>
               <MovieBox/>
@@ -109,7 +119,12 @@ const Body = () => {
                <MovieBox movieName={key}/>
             
              
-            ))}<div onClick={()=>setPage(apage)}><MovieBox text={"Load More"}/></div></div>
+            ))} {(apage<5)?
+              <div onClick={()=>setPage(apage)}><MovieBox text={"Load More"}/></div>
+              :
+              ""
+              
+               }</div>
             :<div className="flex ">
               <MovieBox/>
               <MovieBox/>
@@ -131,7 +146,12 @@ const Body = () => {
             <div className="flex ">
           {romance.map((key)=>(
               <MovieBox movieName={key}/>
-            ))} <MovieBox text={"Load More"}/></div>
+            ))}  {(rpage<5)?
+              <div onClick={()=>setPage(rpage)}><MovieBox text={"Load More"}/></div>
+              :
+              ""
+              
+               }</div>
             :<div className="flex ">
               <MovieBox/>
               <MovieBox/>
@@ -153,7 +173,12 @@ const Body = () => {
             <div className="flex ">
           {comedy.map((key)=>(
               <MovieBox movieName={key}/>
-            ))}<MovieBox text={"Load More"}/> </div>
+            ))} {(cpage<5)?
+              <div onClick={()=>setPage(cpage)}><MovieBox text={"Load More"}/></div>
+              :
+              ""
+              
+               } </div>
             :<div className="flex ">
               <MovieBox/>
               <MovieBox/>
@@ -175,7 +200,12 @@ const Body = () => {
             <div className="flex ">
           {horror.map((key)=>(
               <MovieBox movieName={key}/>
-            ))} <MovieBox text={"Load More"}/></div>
+            ))} {(hpage<5)?
+              <div onClick={()=>setPage(hpage)}><MovieBox text={"Load More"}/></div>
+              :
+              ""
+              
+               }</div>
             :<div className="flex ">
               <MovieBox/>
               <MovieBox/>
