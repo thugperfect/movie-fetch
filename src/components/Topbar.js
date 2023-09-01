@@ -1,4 +1,5 @@
-const Topbar = () =>{
+import { useState } from "react"
+const Topbar = ({search}) =>{
 
     return(
        <div className="w-full sticky top-0 z-10">
@@ -9,7 +10,17 @@ const Topbar = () =>{
             </div>
    
             <div className="flex gap-2">
-                <input className=" px-2 outline-0 rounded-[5px]  lg:w-[300px] w-[120px]  " type="text" placeholder="Search for Movies" ></input>
+                <div className="relative">
+                <input className=" px-2 outline-0 rounded-[5px]  lg:w-[350px] w-[140px]" onChange={(e)=>search(e.target.value)} type="text" placeholder="Search for Movies" ></input>
+                <div className="absolute lg:w-[350px] w-[140px] text-white flex flex-col">
+                <div className=" w-full h-[50px] bg-zinc-800 px-5 flex flex-col justify-center">ds</div>
+                <div className=" w-full h-[50px] bg-zinc-800 px-5 flex flex-col justify-center">cdwkbj</div>
+                <div className=" w-full h-[50px] bg-zinc-800 px-5 flex flex-col justify-center">cdwkbj</div>
+                </div>
+
+                </div>
+                
+
                 <div className="text-gray-500 hover:text-gray-600 cursor-pointer">Home</div>
                 <div className="text-gray-500 hover:text-gray-600 cursor-pointer">Login</div>
             </div>
