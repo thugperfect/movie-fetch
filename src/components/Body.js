@@ -7,20 +7,30 @@ const Body = () => {
   const [romance,setRomance] = useState()
   const [comedy,setComedy] = useState()
   const [horror,setHorror] = useState()
+
+  const [lpage,setLpage] = useState(1)
+  const [apage,setApage] = useState(1)
+  const [rpage,setRpage] = useState(1)
+  const [cpage,setCpage] = useState(1)
+  const [hpage,setHpage] = useState(1)
+  
+  
   const search="action";
   const title = "a";
   const year = 2023
   const api_key = `http://www.omdbapi.com/?s=${search}&y=${year}&apikey=68ec0e63`
-  const latest_api_key = `https://www.omdbapi.com/?s=act&y=2023&apikey=68ec0e63`
-  const action_api_key = `https://www.omdbapi.com/?s=action&apikey=68ec0e63`
-  const romance_api_key = `https://www.omdbapi.com/?s=love&apikey=68ec0e63`
-  const comedy_api_key = `https://www.omdbapi.com/?s=comedy&apikey=68ec0e63`
-  const horror_api_key = `https://www.omdbapi.com/?s=horror&apikey=68ec0e63`
+
 
 
 
   useEffect(()=>{
+
     const fetchMovie =async () =>{
+      const latest_api_key = await `https://www.omdbapi.com/?s=act&y=2022-2023&page=${lpage}&apikey=68ec0e63`
+      const action_api_key = await `https://www.omdbapi.com/?s=action&page=${apage}&apikey=68ec0e63`
+      const romance_api_key =await `https://www.omdbapi.com/?s=love&page=${rpage}&apikey=68ec0e63`
+      const comedy_api_key =await `https://www.omdbapi.com/?s=comedy&page=${cpage}&apikey=68ec0e63`
+      const horror_api_key =await `https://www.omdbapi.com/?s=horror&page=${hpage}&apikey=68ec0e63`
       const latest_movies =await fetch(latest_api_key)
       const action_movies =await fetch(action_api_key)
       const romance_movies =await fetch(romance_api_key)
@@ -39,8 +49,27 @@ const Body = () => {
     }
     fetchMovie()
   },[])
-  
+  const setPage =(prop) =>{
+    console.log("clicked");
+    if(prop === lpage){
+      setLatest()
+      setLpage(lpage+1)
+    }
+    if(prop === apage){
+      
+    }
+    if(prop === rpage){
+      
+    }
+    if(prop === cpage){
+      
+    }
+    if(prop === hpage){
+      
+    }
 
+
+  }
   return (
     <div className=" container bg-gray-500 bg-opacity-30  h-auto mx-auto w-[80%]">
        <div className="text-2xl pt-5 cursor-pointer font-bold text-white px-5">Latest Movies</div>
@@ -52,7 +81,8 @@ const Body = () => {
             <div className="flex ">
           {latest.map((key)=>(
               <MovieBox movieName={key}/>
-            ))} </div>
+            ))} 
+           <div onClick={()=>setPage(lpage)}><MovieBox text={"Load More"}/></div></div>
             :<div className="flex ">
               <MovieBox/>
               <MovieBox/>
@@ -75,8 +105,11 @@ const Body = () => {
             action?.length>0?
             <div className="flex ">
           {action.map((key)=>(
-              <MovieBox movieName={key}/>
-            ))} </div>
+     
+               <MovieBox movieName={key}/>
+            
+             
+            ))}<div onClick={()=>setPage(apage)}><MovieBox text={"Load More"}/></div></div>
             :<div className="flex ">
               <MovieBox/>
               <MovieBox/>
@@ -98,7 +131,7 @@ const Body = () => {
             <div className="flex ">
           {romance.map((key)=>(
               <MovieBox movieName={key}/>
-            ))} </div>
+            ))} <MovieBox text={"Load More"}/></div>
             :<div className="flex ">
               <MovieBox/>
               <MovieBox/>
@@ -120,7 +153,7 @@ const Body = () => {
             <div className="flex ">
           {comedy.map((key)=>(
               <MovieBox movieName={key}/>
-            ))} </div>
+            ))}<MovieBox text={"Load More"}/> </div>
             :<div className="flex ">
               <MovieBox/>
               <MovieBox/>
@@ -142,7 +175,7 @@ const Body = () => {
             <div className="flex ">
           {horror.map((key)=>(
               <MovieBox movieName={key}/>
-            ))} </div>
+            ))} <MovieBox text={"Load More"}/></div>
             :<div className="flex ">
               <MovieBox/>
               <MovieBox/>
